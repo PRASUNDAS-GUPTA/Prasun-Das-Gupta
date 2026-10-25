@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasun Das Gupta | Quantitative Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* DARK THEME - Oxford Blue #1B3C53 */
+            --primary: #102431; 
+            --accent: #d4af37; 
+            --bg-base: #1B3C53;
+            --bg-overlay: rgba(27, 60, 83, 0.9);
+            --card-bg: rgba(20, 44, 61, 0.85); 
+            --text-main: #ffffff;
+            --text-card: #ffffff;
+            --nav-bg: rgba(20, 44, 61, 0.98);
+            --line-color: rgba(212, 175, 55, 0.25);
+            --icon-shadow: rgba(212, 175, 55, 0.4);
+        }
+
+        [data-theme="light"] {
+            /* LIGHT THEME - Clean Academic (white + Oxford Blue) */
+            --primary: #1B3C53;
+            --accent: #1B3C53;
+            --bg-base: #eef2f6;
+            --bg-overlay: rgba(238, 242, 246, 0.95); 
+            --card-bg: #ffffff; 
+            --text-main: #1c2b39;
+            --text-card: #1f2933;
+            --nav-bg: #ffffff; 
+            --line-color: rgba(27, 60, 83, 0.18);
+            --icon-shadow: rgba(27, 60, 83, 0.12);
+        }
+        [data-theme="light"] nav { border-bottom: 1px solid #dde3ea; box-shadow: 0 2px 10px rgba(27,60,83,0.06); }
+        [data-theme="light"] .card { border-top-color: #b8922a; box-shadow: 0 6px 24px rgba(27,60,83,0.08); }
+        [data-theme="light"] h2 { border-bottom-color: #dde3ea; }
+        [data-theme="light"] h3, [data-theme="light"] .item-box { border-left-color: #b8922a; }
+        [data-theme="light"] #theme-toggle { color: #b8922a !important; }
+
+
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+
+        body { 
+            font-family: 'Garamond', 'Georgia', serif; 
+            line-height: 1.6; 
+            color: var(--text-main); 
+            margin: 0; 
+            background-color: var(--bg-base);
+            transition: background-color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        #bg-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), 
+                        url('https://images.unsplash.com/photo-1596495573105-d14658c1de16?auto=format&fit=crop&q=80&w=2072');
+            background-size: cover; background-attachment: fixed; z-index: 0;
+        }
+
+        nav, header, .container, footer { position: relative; z-index: 10; }
+
+        nav { 
+            position: fixed; top: 0; width: 100%; background: var(--nav-bg); padding: 15px 5%; 
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 2000; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--accent); cursor: pointer; }
+        .nav-links { display: flex; gap: 15px; }
+        nav a { color: var(--text-main); text-decoration: none; font-size: 0.68rem; text-transform: uppercase; font-weight: 600; }
+        nav a:hover { color: var(--accent); }
+
+        header { 
+            min-height: 100vh; display: grid; grid-template-columns: 1.3fr 1fr; align-items: center; 
+            padding: 80px 10% 40px; text-align: left; 
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 0; color: var(--text-main); line-height: 1.1; }
+        .hero-tagline { font-size: clamp(1.1rem, 2vw, 1.6rem); font-style: italic; margin-top: 15px; opacity: 0.9; }
+
+        .header-links { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 25px; }
+        .header-links a { 
+            color: var(--text-main); 
+            font-size: 2.2rem; 
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            filter: drop-shadow(0 2px 4px var(--icon-shadow));
+        }
+        .header-links a:hover { color: var(--accent); transform: translateY(-5px); }
+
+        .profile-img { 
+            width: clamp(200px, 25vw, 270px); height: clamp(200px, 25vw, 270px); 
+            border-radius: 50%; object-fit: cover; border: 6px solid var(--card-bg); 
+            outline: 2px solid var(--accent); box-shadow: 0 15px 45px rgba(0,0,0,0.4);
+        }
+
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        section { padding-top: 80px; margin-bottom: 20px; }
+
+        .card {
+            background: var(--card-bg); padding: clamp(20px, 5vw, 45px); border-radius: 4px;
+            color: var(--text-card); border-top: 5px solid var(--accent);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2); backdrop-filter: blur(8px);
+        }
+
+        h2 { font-size: 1.4rem; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid rgba(128,128,128,0.2); padding-bottom: 10px; margin-bottom: 25px; }
+        h3 { font-size: 1.1rem; color: var(--accent); margin-top: 25px; border-left: 3px solid var(--accent); padding-left: 15px; }
+
+        .academic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
+        .academic-card { 
+            background: rgba(255,255,255,0.05); padding: 20px; border-radius: 4px; border: 1px solid rgba(128,128,128,0.1); 
+            text-align: center; font-weight: 600; color: var(--text-card); font-size: 0.9rem; transition: 0.3s ease;
+        }
+        [data-theme="light"] .academic-card { background: #f7f9fb; border: 1px solid #e1e7ee; color: #1f2933; }
+        .academic-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+
+        .item-box { margin-bottom: 25px; border-left: 3px solid var(--accent); padding-left: 20px; }
+        .badge { background: var(--primary); color: white; padding: 4px 12px; font-size: 0.65rem; font-weight: bold; text-transform: uppercase; display: inline-block; margin-bottom: 8px; }
+
+        @media (max-width: 992px) { header { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 40px; } .header-links { justify-content: center; } }
+        @media (max-width: 768px) { .menu-toggle { display: block; } .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--nav-bg); flex-direction: column; padding: 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); } .nav-links.active { display: flex; } }
+
+        /* RANK CIRCLES: Q1-Q4 and Conference */
+        :root {
+            --q1: #3fb950; --q1-text: #0b1f10;
+            --q2: #f2cc4b; --q2-text: #2a2000;
+            --q3: #f59e42; --q3-text: #2b1400;
+            --q4: #e8590c; --q4-text: #ffffff;
+            --conf: #9ccfff; --conf-text: #0b2236;
+            --na: #6e7781; --na-text: #ffffff;
+        }
+        [data-theme="light"] {
+            --q1: #2e7d32; --q1-text: #ffffff;
+            --q2: #f9c80e; --q2-text: #3a2e00;
+            --q3: #ef7d00; --q3-text: #ffffff;
+            --q4: #c43e00; --q4-text: #ffffff;
+            --conf: #b9dcfb; --conf-text: #0d3a63;
+            --na: #b0b7bf; --na-text: #2d2621;
+        }
+        .rank-dot {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 32px; height: 32px; border-radius: 50%;
+            font-size: 0.72rem; font-weight: bold; font-family: Arial, sans-serif;
+            margin-right: 8px; vertical-align: middle; margin-bottom: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .rank-dot.q1 { background: var(--q1); color: var(--q1-text); }
+        .rank-dot.q2 { background: var(--q2); color: var(--q2-text); }
+        .rank-dot.q3 { background: var(--q3); color: var(--q3-text); }
+        .rank-dot.q4 { background: var(--q4); color: var(--q4-text); }
+        .rank-dot.conf { background: var(--conf); color: var(--conf-text); }
+        .rank-dot.na { background: var(--na); color: var(--na-text); font-size: 0.6rem; }
+        .rank-dot + .badge { vertical-align: middle; }
+
+        footer { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.1); font-size: 0.8rem; }
+        .load-msg { text-align: center; padding: 120px 20px; font-size: 1.1rem; }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <div class="nav-links" id="nav-links">
+            <a href="#home">Home</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#interests">Interests</a>
+            <a href="#skills">Expertise</a>
+            <a href="#initiatives">Ongoing Work</a>
+            <a href="#research">Publications</a>
+            <a href="#conference">Conference</a>
+            <a href="#leadership">Leadership</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <button id="theme-toggle" onclick="toggleTheme()" style="background:none; border:none; color:var(--accent); cursor:pointer; font-size:1.2rem;"><i class="fas fa-moon" id="theme-icon"></i></button>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="hero-details">
+            <h1>Hello, I'm <br><span id="hero-name"></span></h1>
+            <p class="hero-tagline" id="hero-tagline"></p>
+            <div class="header-links" id="header-links"></div>
+        </div>
+        <div class="hero-image-container">
+            <img id="profile-photo" alt="" class="profile-img">
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="load-msg" class="load-msg">Loading…</div>
+
+        <section id="experience">
+            <h2>Research Experience</h2>
+            <div class="card" id="experience-list"></div>
+        </section>
+
+        <section id="education">
+            <h2>Academic Foundation</h2>
+            <div class="card" id="education-list"></div>
+        </section>
+
+        <section id="interests">
+            <h2>Research Interests</h2>
+            <div class="academic-grid" id="interests-list"></div>
+        </section>
+
+        <section id="skills">
+            <h2>Methodological Expertise & Tools</h2>
+            <div class="card" id="skills-list"></div>
+        </section>
+
+        <section id="initiatives">
+            <h2>Ongoing Research Initiatives</h2>
+            <div class="card" id="ongoing-list"></div>
+        </section>
+
+        <section id="research">
+            <h2>Scholarly Portfolio</h2>
+            <div class="card">
+                <h3>Published Journal Articles</h3>
+                <div id="published-list"></div>
+                <h3>Under Review</h3>
+                <div id="review-list"></div>
+            </div>
+        </section>
+
+        <section id="conference">
+            <h2>Conference Paper</h2>
+            <div class="card" id="conference-list"></div>
+        </section>
+
+        <section id="leadership">
+            <h2>Leadership Roles</h2>
+            <div class="card">
+                <div id="leadership-list"></div>
+                <h3>Certificates &amp; Training</h3>
+                <div id="certificates-list"></div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Direct Academic Inquiry</h2>
+            <div class="card">
+                <p style="margin-bottom: 20px;" id="contact-intro"></p>
+                <form id="contact-form" method="POST">
+                    <input type="text" name="name" placeholder="Full Name & Institution" style="width:100%; padding:12px; margin-bottom:10px; background:rgba(255,255,255,0.05); border:1px solid rgba(128,128,128,0.35); color:inherit;" required>
+                    <input type="email" name="email" placeholder="Academic Email" style="width:100%; padding:12px; margin-bottom:10px; background:rgba(255,255,255,0.05); border:1px solid rgba(128,128,128,0.35); color:inherit;" required>
+                    <textarea name="message" rows="4" placeholder="Details regarding collaboration..." style="width:100%; padding:12px; margin-bottom:10px; background:rgba(255,255,255,0.05); border:1px solid rgba(128,128,128,0.35); color:inherit;" required></textarea>
+                    <button type="submit" style="background:var(--accent); color:#fff; padding:15px; border:none; cursor:pointer; width:100%; font-weight:bold; text-transform:uppercase;">Transmit Inquiry</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer><p id="footer-text"></p></footer>
+
+    <script>
+        /* ===== All content comes from content.json (edited through Pages CMS) ===== */
+
+        // Small helper: create an element with optional class and text (text is always safe, never HTML)
+        function el(tag, cls, text) {
+            const e = document.createElement(tag);
+            if (cls) e.className = cls;
+            if (text !== undefined && text !== null) e.textContent = text;
+            return e;
+        }
+        function has(v) { return v !== undefined && v !== null && String(v).trim() !== ''; }
+        function list(v) { return Array.isArray(v) ? v : []; }
+
+        // "Title: value" style line
+        function labeled(label, value) {
+            const p = el('p');
+            p.appendChild(el('strong', null, label + ' '));
+            p.appendChild(document.createTextNode(value));
+            return p;
+        }
+
+        // Authors line with your own name underlined
+        function authorsLine(authors, myName) {
+            const p = el('p');
+            p.appendChild(el('strong', null, 'Authors: '));
+            if (!has(myName) || authors.indexOf(myName) === -1) {
+                p.appendChild(document.createTextNode(authors));
+                return p;
+            }
+            authors.split(myName).forEach((part, i, arr) => {
+                p.appendChild(document.createTextNode(part));
+                if (i < arr.length - 1) p.appendChild(el('u', null, myName));
+            });
+            return p;
+        }
+
+        function doiLine(doi) {
+            const clean = String(doi).replace(/^https?:\/\/(dx\.)?doi\.org\//i, '').trim();
+            const p = el('p');
+            p.appendChild(el('strong', null, 'DOI: '));
+            const a = el('a', null, clean);
+            a.href = 'https://doi.org/' + clean;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.style.color = 'var(--accent)';
+            a.style.fontWeight = 'bold';
+            p.appendChild(a);
+            return p;
+        }
+
+        // Colored rank circle: Q1–Q4, N/A, C
+        const RANKS = {
+            'Q1': ['q1', 'Q1', 'Scopus Q1'], 'Q2': ['q2', 'Q2', 'Scopus Q2'],
+            'Q3': ['q3', 'Q3', 'Scopus Q3'], 'Q4': ['q4', 'Q4', 'Scopus Q4'],
+            'N/A': ['na', 'N/A', 'Not indexed in Scopus'], 'C': ['conf', 'C', 'Conference Paper']
+        };
+        function rankDot(rank) {
+            const r = RANKS[rank];
+            if (!r) return null;
+            const s = el('span', 'rank-dot ' + r[0], r[1]);
+            s.title = r[2];
+            return s;
+        }
+
+        function badgeRow(box, rank, badge) {
+            const dot = rankDot(rank);
+            if (dot) box.appendChild(dot);
+            if (has(badge)) box.appendChild(el('span', 'badge', badge));
+        }
+
+        function fill(id, items, build) {
+            const box = document.getElementById(id);
+            box.innerHTML = '';
+            list(items).forEach(item => { if (item) box.appendChild(build(item)); });
+        }
+
+        function render(d) {
+            const site = d.site || {}, links = d.links || {}, me = site.highlightName;
+
+            if (has(site.pageTitle)) document.title = site.pageTitle;
+            document.getElementById('hero-name').textContent = site.name || '';
+            document.getElementById('hero-tagline').textContent = site.tagline || '';
+            document.getElementById('footer-text').textContent = site.footer || '';
+
+            const photo = document.getElementById('profile-photo');
+            if (has(site.photo)) {
+                // Works both at the site root and at /Prasun-Das-Gupta/ on GitHub Pages
+                photo.src = String(site.photo).replace(/^\/+/, '');
+                photo.alt = site.name || 'Profile photo';
+            } else {
+                photo.style.display = 'none';
+            }
+
+            // Header icons
+            const icons = [
+                ['scholar', 'fas fa-graduation-cap', 'Google Scholar'],
+                ['researchgate', 'fab fa-researchgate', 'ResearchGate'],
+                ['orcid', 'fab fa-orcid', 'ORCID'],
+                ['linkedin', 'fab fa-linkedin', 'LinkedIn'],
+                ['email', 'fas fa-envelope', 'Email'],
+                ['facebook', 'fab fa-facebook', 'Facebook']
+            ];
+            const hl = document.getElementById('header-links');
+            hl.innerHTML = '';
+            icons.forEach(([key, icon, title]) => {
+                if (!has(links[key])) return;
+                const a = el('a');
+                a.title = title;
+                if (key === 'email') {
+                    a.href = 'mailto:' + String(links.email).replace(/^mailto:/i, '');
+                } else {
+                    a.href = links[key];
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                }
+                a.appendChild(el('i', icon));
+                hl.appendChild(a);
+            });
+
+            fill('experience-list', d.experience, x => {
+                const box = el('div', 'item-box');
+                badgeRow(box, null, x.dates);
+                box.appendChild(el('h3', null, x.role));
+                if (has(x.organization)) { const p = el('p'); p.appendChild(el('strong', null, x.organization)); box.appendChild(p); }
+                if (has(x.supervisor)) { const p = el('p'); p.appendChild(el('em', null, 'Supervisor:')); p.appendChild(document.createTextNode(' ' + x.supervisor)); box.appendChild(p); }
+                const pts = list(x.points).filter(has);
+                if (pts.length) { const ul = el('ul'); pts.forEach(t => ul.appendChild(el('li', null, t))); box.appendChild(ul); }
+                return box;
+            });
+
+            fill('education-list', d.education, x => {
+                const box = el('div', 'item-box');
+                badgeRow(box, null, x.badge);
+                box.appendChild(el('h3', null, x.degree));
+                if (has(x.institution)) box.appendChild(el('p', null, x.institution));
+                if (has(x.details)) box.appendChild(el('p', null, x.details));
+                return box;
+            });
+
+            fill('interests-list', list(d.interests).filter(has), t => el('div', 'academic-card', t));
+
+            fill('skills-list', d.skillGroups, g => {
+                const frag = document.createDocumentFragment();
+                frag.appendChild(el('h3', null, g.title));
+                const grid = el('div', 'academic-grid');
+                list(g.items).filter(has).forEach(t => grid.appendChild(el('div', 'academic-card', t)));
+                frag.appendChild(grid);
+                return frag;
+            });
+
+            fill('ongoing-list', d.ongoing, x => {
+                const box = el('div', 'item-box');
+                badgeRow(box, null, x.label);
+                box.appendChild(el('h3', null, x.title));
+                if (has(x.description)) box.appendChild(el('p', null, x.description));
+                return box;
+            });
+
+            const paper = (x, isConf) => {
+                const box = el('div', 'item-box');
+                badgeRow(box, isConf ? 'C' : x.rank, x.badge);
+                if (has(x.title)) box.appendChild(labeled('Title:', x.title));
+                if (has(x.authors)) box.appendChild(authorsLine(x.authors, me));
+                if (has(x.journal)) box.appendChild(labeled('Journal:', x.journal));
+                if (has(x.publishedIn)) box.appendChild(labeled('Published in:', x.publishedIn));
+                if (has(x.doi)) box.appendChild(doiLine(x.doi));
+                return box;
+            };
+            fill('published-list', d.published, x => paper(x, false));
+            fill('review-list', d.underReview, x => paper(x, false));
+            fill('conference-list', d.conference, x => paper(x, true));
+
+            fill('leadership-list', d.leadership, x => {
+                const box = el('div', 'item-box');
+                badgeRow(box, null, x.dates);
+                box.appendChild(el('h3', null, x.role));
+                if (has(x.organization)) box.appendChild(el('p', null, x.organization));
+                return box;
+            });
+
+            fill('certificates-list', d.certificates, x => {
+                const box = el('div', 'item-box');
+                badgeRow(box, null, x.badge);
+                box.appendChild(el('h3', null, x.title));
+                if (has(x.details)) box.appendChild(el('p', null, x.details));
+                return box;
+            });
+
+            const contact = d.contact || {};
+            document.getElementById('contact-intro').textContent = contact.intro || '';
+            if (has(contact.formAction)) document.getElementById('contact-form').action = contact.formAction;
+
+            document.getElementById('load-msg').style.display = 'none';
+        }
+
+        fetch('content.json', { cache: 'no-cache' })
+            .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+            .then(render)
+            .catch(err => {
+                const m = document.getElementById('load-msg');
+                m.textContent = location.protocol === 'file:'
+                    ? 'This page reads its content from content.json, which browsers block when you double-click the file. Open it through GitHub Pages or a local server (for example, VS Code Live Server).'
+                    : 'Could not load content.json (' + err.message + '). Check that the file exists next to index.html and is valid.';
+                console.error(err);
+            });
+
+        /* ===== Menu, theme, and background animation (unchanged) ===== */
+        function toggleMenu() { document.getElementById('nav-links').classList.toggle('active'); }
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            const newTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            icon.className = newTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        document.getElementById('nav-links').addEventListener('click', e => {
+            if (e.target.tagName === 'A') document.getElementById('nav-links').classList.remove('active');
+        });
+
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let dots = [];
+        function setCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', setCanvas); setCanvas();
+
+        class Dot {
+            constructor() { this.x = Math.random()*canvas.width; this.y = Math.random()*canvas.height; this.vx = (Math.random()-0.5)*0.3; this.vy = (Math.random()-0.5)*0.3; }
+            update() { this.x+=this.vx; this.y+=this.vy; if(this.x<0 || this.x>canvas.width) this.vx*=-1; if(this.y<0 || this.y>canvas.height) this.vy*=-1; }
+            draw() { ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--line-color'); ctx.beginPath(); ctx.arc(this.x, this.y, 2.5, 0, Math.PI*2); ctx.fill(); }
+        }
+        for(let i=0; i<(window.innerWidth < 768 ? 25 : 45); i++) dots.push(new Dot());
+        function anim() { ctx.clearRect(0,0,canvas.width, canvas.height); dots.forEach(d => { d.update(); d.draw(); }); requestAnimationFrame(anim); }
+        anim();
+    </script>
+</body>
+</html>

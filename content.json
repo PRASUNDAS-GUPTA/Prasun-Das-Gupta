@@ -1,0 +1,233 @@
+{
+  "site": {
+    "pageTitle": "Prasun Das Gupta | Quantitative Researcher (FinTech, Corporate Finance & Sustainability)",
+    "name": "Prasun Das Gupta",
+    "tagline": "Quantitative Researcher | FinTech, Corporate Finance & Sustainability",
+    "photo": "image/WhatsApp Image 2026-02-27 at 11.56.12 AM.jpeg",
+    "highlightName": "Das Gupta, P.",
+    "footer": "© 2026 Prasun Das Gupta | Jagannath University"
+  },
+  "links": {
+    "scholar": "https://scholar.google.com/citations?user=D8XW508AAAAJ",
+    "researchgate": "https://www.researchgate.net/profile/Prasun-Das-Gupta",
+    "orcid": "https://orcid.org/0009-0008-7210-7591",
+    "linkedin": "https://www.linkedin.com/in/prasun-das-gupta-b18495282",
+    "email": "prasundasgupta10@gmail.com",
+    "facebook": "https://www.facebook.com/share/1KqpbM3XMa/"
+  },
+  "experience": [
+    {
+      "dates": "July 2026 – Present",
+      "role": "Research Assistant",
+      "organization": "Department of Finance, Jagannath University, Dhaka",
+      "supervisor": "Ayesha Akhter, Associate Professor, Department of Finance, Jagannath University.",
+      "points": [
+        "Working on research in econometrics and corporate finance.",
+        "Developing skills in econometric methods."
+      ]
+    },
+    {
+      "dates": "March 2025 – Present",
+      "role": "Research Assistant",
+      "organization": "Department of Business Studies, State University of Bangladesh, Dhaka",
+      "supervisor": "Dr. Sandy Francis Peris, Assistant Professor, Dept. of Business Studies, State University of Bangladesh.",
+      "points": [
+        "Conducted SEM and multi-group analysis (MGA) using SmartPLS-4.",
+        "Wrote the Introduction and Literature Review sections of research papers.",
+        "Trained junior team members in data preparation and basic SEM."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "badge": "2023 – 2027",
+      "degree": "BBA in Finance (Honors)",
+      "institution": "Jagannath University, Dhaka, Bangladesh",
+      "details": "Session: 2022–23 | CGPA: 3.16 / 4.00"
+    },
+    {
+      "badge": "HSC",
+      "degree": "Higher Secondary Certificate | GPA: 5.00",
+      "institution": "Business Studies",
+      "details": ""
+    },
+    {
+      "badge": "SSC",
+      "degree": "Secondary School Certificate | GPA: 4.50",
+      "institution": "Business Studies",
+      "details": ""
+    }
+  ],
+  "interests": [
+    "FinTech",
+    "Corporate Finance",
+    "Sustainable SME Performance",
+    "Agribusiness & Agricultural Extension",
+    "AI Adoption in Emerging Markets",
+    "Quantitative Methodology (SEM/MGA)",
+    "Consumer Behavior & Green Intentions",
+    "Sustainability in Smart Farming"
+  ],
+  "skillGroups": [
+    {
+      "title": "Quantitative Methods",
+      "items": [
+        "PLS Structural Equation Modeling (PLS-SEM)",
+        "Multi-Group Analysis (PLS-MGA)",
+        "Mediation & Moderation Analysis",
+        "Confirmatory Factor Analysis (CFA) in SmartPLS",
+        "Survey Design & Primary Data Collection",
+        "Econometric Analysis"
+      ]
+    },
+    {
+      "title": "Software & Data Collection Tools",
+      "items": [
+        "SmartPLS-4 (Advanced Proficiency)",
+        "Stata (Regression & Econometric Analysis)",
+        "SPSS (Statistical Testing)",
+        "MS Excel (Data Cleaning & Processing)",
+        "Google Forms (Survey Data Collection)",
+        "KoboToolbox (Field Data Collection)"
+      ]
+    },
+    {
+      "title": "Research Writing & Mentoring",
+      "items": [
+        "Full Research Manuscript Drafting",
+        "Introduction & Literature Review Writing",
+        "Hypothesis Development & Conceptual Frameworks",
+        "Mendeley (Reference Management)",
+        "MS Word (Scientific Formatting)",
+        "Training Junior Researchers (Data Preparation & SEM)"
+      ]
+    }
+  ],
+  "ongoing": [
+    {
+      "label": "FinTech & Banking",
+      "title": "FinTech Adoption, Industry 4.0 Adoption, and Bank Performance: A Primary Approach in Bangladesh",
+      "description": ""
+    },
+    {
+      "label": "Agriculture",
+      "title": "Good Agricultural Products",
+      "description": ""
+    },
+    {
+      "label": "Agricultural Technology",
+      "title": "Technology Adoption among Farmers",
+      "description": ""
+    },
+    {
+      "label": "Green Banking",
+      "title": "Credit Risk and Bank Performance in Bangladesh: Can Green Banking Enhance Banks’ Financial Resilience?",
+      "description": ""
+    }
+  ],
+  "published": [
+    {
+      "rank": "N/A",
+      "badge": "2026 | First Author",
+      "title": "Driving Sustainable Firm Performance through Industry 5.0 Adoption and Organizational Agility in SMEs: A Conceptual Framework for Government Support",
+      "authors": "Das Gupta, P., Peris, S. F., Tazin, F., Sohana, F., Rahman, M., & Islam, R.",
+      "journal": "Journal of Applied Technology and Innovation, 10(3)",
+      "doi": "10.65136/JATI.V10I3.343"
+    },
+    {
+      "rank": "Q1",
+      "badge": "2026 | Scopus Q1 | WoS ESCI",
+      "title": "Advancing SDGs with Green Market Orientation by Exploring How Environmental Orientation, Government Support, and Organizational Support Improve SME Performance in Bangladesh",
+      "authors": "Peris, S. F., Islam, R., Abir, T., Purnima, F. H., Das Gupta, P., Ali, K. S., & Daud, S. N.",
+      "journal": "Discover Sustainability (Springer Nature)",
+      "doi": "10.1007/S43621-026-03070-7"
+    },
+    {
+      "rank": "Q2",
+      "badge": "2026 | Scopus Q2 | WoS ESCI",
+      "title": "Farmers’ Use of ChatGPT as a Digital Extension Tool in Jhenaidah District, Bangladesh",
+      "authors": "Rahman, M., Das Gupta, P., Hasnat, A., & Palash, M. R. A.",
+      "journal": "Journal of Agricultural Extension, 30(3), 11–20",
+      "doi": "10.4314/2K7K1W89"
+    }
+  ],
+  "underReview": [
+    {
+      "rank": "Q1",
+      "badge": "Scopus Q1",
+      "title": "Perceived Algorithmic Personalization and Social Media Information Reliance in Organic Food Purchase Intention among Consumers in Bangladesh",
+      "authors": "",
+      "journal": "Discover Artificial Intelligence"
+    },
+    {
+      "rank": "Q1",
+      "badge": "Scopus Q1 | WoS ESCI | First Author",
+      "title": "Green Price Acceptance and AI Personalized Recommendations in Organic Food Purchase Intention among Urban Consumers in Bangladesh",
+      "authors": "",
+      "journal": "Discover Sustainability"
+    },
+    {
+      "rank": "Q1",
+      "badge": "Scopus Q1 | WoS ESCI",
+      "title": "Antecedents of Green Purchase Intention and the Moderating Role of Social Media Usage in an Extended TPB Framework",
+      "authors": "",
+      "journal": "Discover Sustainability"
+    },
+    {
+      "rank": "Q1",
+      "badge": "Scopus Q1 | WoS SSCI",
+      "title": "AI-Driven Online Banking Adoption in Bangladesh: The Roles of Attitude and Perceived Government Support",
+      "authors": "",
+      "journal": "SAGE Open"
+    },
+    {
+      "rank": "Q1",
+      "badge": "Scopus Q1 | WoS SSCI | ABS 1",
+      "title": "Green Purchase Intention in a Global South Megacity: The Roles of Sustainability Awareness and Willingness to Pay a Green Premium",
+      "authors": "",
+      "journal": "Current Psychology"
+    }
+  ],
+  "conference": [
+    {
+      "badge": "2025 | Published",
+      "title": "Towards a Sustainable Future: Developing a Framework for Social Business Performance in the Context of Environmental Orientation and Government Support",
+      "authors": "Francis Peris, S., Das Gupta, P., Rahaman, A., Uddin, I., Purnima, F. H., Ali, K. S., & Hindarsah, I.",
+      "publishedIn": "Journal of Business and Social Sciences, 2025(3)",
+      "doi": "10.61453/jobss.v2025no34"
+    }
+  ],
+  "leadership": [
+    {
+      "dates": "August 2026 – Present",
+      "role": "General Secretary",
+      "organization": "Jagannath University Research and Higher Study Society (JnURHSS)"
+    },
+    {
+      "dates": "April 2025 – August 2026",
+      "role": "Publication Secretary",
+      "organization": "Jagannath University Research and Higher Study Society (JnURHSS)"
+    },
+    {
+      "dates": "March 2026 – August 2026",
+      "role": "Executive Member",
+      "organization": "Jagannath University IT Society"
+    }
+  ],
+  "certificates": [
+    {
+      "badge": "Certificate",
+      "title": "Aspire Leaders Program",
+      "details": "Aspire Institute — 40 hours of coursework."
+    },
+    {
+      "badge": "2 Months",
+      "title": "Project Gama: Research Basic to Advanced",
+      "details": "Jagannath University Research and Higher Study Society"
+    }
+  ],
+  "contact": {
+    "intro": "Seeking Masters/MPhil/PhD candidateships, GTA/GRA positions, or international collaborations.",
+    "formAction": "https://formspree.io/f/xeeldqob"
+  }
+}
