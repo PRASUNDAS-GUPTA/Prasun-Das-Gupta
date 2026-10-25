@@ -1,0 +1,296 @@
+media:
+  input: image
+  output: image
+  categories: [image]
+
+content:
+  - name: website
+    label: My Website
+    type: file
+    path: content.json
+    format: json
+    fields:
+      - name: site
+        label: Profile & Photo
+        type: object
+        fields:
+          - name: photo
+            label: Profile photo
+            type: image
+            description: Upload a new photo or pick one from the image folder.
+          - name: name
+            label: Your name
+            type: string
+            required: true
+          - name: tagline
+            label: Tagline (under your name)
+            type: string
+          - name: pageTitle
+            label: Browser tab title
+            type: string
+          - name: highlightName
+            label: Your name as written in author lists (gets underlined)
+            type: string
+            description: For example, Das Gupta, P.
+          - name: footer
+            label: Footer text
+            type: string
+
+      - name: links
+        label: Profile Links
+        type: object
+        fields:
+          - name: scholar
+            label: Google Scholar URL
+            type: string
+          - name: researchgate
+            label: ResearchGate URL
+            type: string
+          - name: orcid
+            label: ORCID URL
+            type: string
+          - name: linkedin
+            label: LinkedIn URL
+            type: string
+          - name: email
+            label: Email address
+            type: string
+          - name: facebook
+            label: Facebook URL
+            type: string
+            description: Leave empty to hide the icon.
+
+      - name: experience
+        label: Research Experience
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{role} – {organization}"
+        fields:
+          - name: dates
+            label: Dates (e.g. July 2026 – Present)
+            type: string
+          - name: role
+            label: Role
+            type: string
+          - name: organization
+            label: Department / Organization
+            type: string
+          - name: supervisor
+            label: Supervisor
+            type: string
+          - name: points
+            label: Responsibilities (one per line)
+            type: string
+            list: true
+
+      - name: education
+        label: Education
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{degree}"
+        fields:
+          - name: badge
+            label: Label (e.g. 2023 – 2027 or HSC)
+            type: string
+          - name: degree
+            label: Degree
+            type: string
+          - name: institution
+            label: Institution / Group
+            type: string
+          - name: details
+            label: Extra details (CGPA, session)
+            type: string
+
+      - name: interests
+        label: Research Interests
+        type: string
+        list: true
+
+      - name: skillGroups
+        label: Expertise & Tools
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Group title
+            type: string
+          - name: items
+            label: Skills
+            type: string
+            list: true
+
+      - name: ongoing
+        label: Ongoing Research
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: label
+            label: Category label
+            type: string
+          - name: title
+            label: Project title
+            type: string
+          - name: description
+            label: Short description (optional)
+            type: text
+
+      - name: published
+        label: Published Journal Articles
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{rank} · {title}"
+        fields:
+          - name: rank
+            label: Rank circle
+            type: select
+            options:
+              values:
+                - name: Q1
+                  label: Q1 (green)
+                - name: Q2
+                  label: Q2 (yellow)
+                - name: Q3
+                  label: Q3 (orange)
+                - name: Q4
+                  label: Q4 (deep orange)
+                - name: N/A
+                  label: N/A – not Scopus (gray)
+                - name: none
+                  label: No circle
+          - name: badge
+            label: Label (e.g. 2026 | Scopus Q1 | WoS ESCI | First Author)
+            type: string
+          - name: title
+            label: Paper title
+            type: text
+          - name: authors
+            label: Authors
+            type: text
+          - name: journal
+            label: Journal (volume, issue, pages)
+            type: string
+          - name: doi
+            label: DOI (e.g. 10.1007/xxxx)
+            type: string
+
+      - name: underReview
+        label: Under Review
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{rank} · {title}"
+        fields:
+          - name: rank
+            label: Rank circle
+            type: select
+            options:
+              values:
+                - name: Q1
+                  label: Q1 (green)
+                - name: Q2
+                  label: Q2 (yellow)
+                - name: Q3
+                  label: Q3 (orange)
+                - name: Q4
+                  label: Q4 (deep orange)
+                - name: N/A
+                  label: N/A – not Scopus (gray)
+                - name: none
+                  label: No circle
+          - name: badge
+            label: Label (e.g. Scopus Q1 | WoS ESCI | First Author)
+            type: string
+          - name: title
+            label: Paper title
+            type: text
+          - name: authors
+            label: Authors (optional)
+            type: text
+          - name: journal
+            label: Journal
+            type: string
+
+      - name: conference
+        label: Conference Papers
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: badge
+            label: Label (e.g. 2025 | Published)
+            type: string
+          - name: title
+            label: Paper title
+            type: text
+          - name: authors
+            label: Authors
+            type: text
+          - name: publishedIn
+            label: Published in
+            type: string
+          - name: doi
+            label: DOI
+            type: string
+
+      - name: leadership
+        label: Leadership Roles
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{role} – {organization}"
+        fields:
+          - name: dates
+            label: Dates
+            type: string
+          - name: role
+            label: Role
+            type: string
+          - name: organization
+            label: Organization
+            type: string
+
+      - name: certificates
+        label: Certificates & Training
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: badge
+            label: Label
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: details
+            label: Details
+            type: string
+
+      - name: contact
+        label: Contact Section
+        type: object
+        fields:
+          - name: intro
+            label: Sentence above the form
+            type: text
+          - name: formAction
+            label: Formspree form URL
+            type: string
