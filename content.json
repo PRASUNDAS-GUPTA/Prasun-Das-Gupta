@@ -1,10 +1,10 @@
 {
   "site": {
-    "pageTitle": "Prasun Das Gupta | Quantitative Researcher (FinTech, Corporate Finance & Sustainability)",
+    "photo": "image/WhatsApp Image 2026-02-27 at 11.56.12 AM.jpeg",
     "name": "Prasun Das Gupta",
     "tagline": "Quantitative Researcher | FinTech, Corporate Finance & Sustainability",
-    "photo": "image/WhatsApp Image 2026-02-27 at 11.56.12 AM.jpeg",
-    "highlightName": "Das Gupta, P.",
+    "pageTitle": "Prasun Das Gupta | Quantitative Researcher (FinTech, Corporate Finance & Sustainability)",
+    "highlightName": "Gupta, P.D.",
     "footer": "© 2026 Prasun Das Gupta | Jagannath University"
   },
   "links": {
@@ -48,14 +48,12 @@
     {
       "badge": "HSC",
       "degree": "Higher Secondary Certificate | GPA: 5.00",
-      "institution": "Business Studies",
-      "details": ""
+      "institution": "Business Studies"
     },
     {
       "badge": "SSC",
       "degree": "Secondary School Certificate | GPA: 4.50",
-      "institution": "Business Studies",
-      "details": ""
+      "institution": "Business Studies"
     }
   ],
   "interests": [
@@ -106,23 +104,19 @@
   "ongoing": [
     {
       "label": "FinTech & Banking",
-      "title": "FinTech Adoption, Industry 4.0 Adoption, and Bank Performance: A Primary Approach in Bangladesh",
-      "description": ""
+      "title": "FinTech Adoption, Industry 4.0 Adoption, and Bank Performance: A Primary Approach in Bangladesh"
     },
     {
       "label": "Agriculture",
-      "title": "Good Agricultural Products",
-      "description": ""
+      "title": "Good Agricultural Products"
     },
     {
       "label": "Agricultural Technology",
-      "title": "Technology Adoption among Farmers",
-      "description": ""
+      "title": "Technology Adoption among Farmers"
     },
     {
       "label": "Green Banking",
-      "title": "Credit Risk and Bank Performance in Bangladesh: Can Green Banking Enhance Banks’ Financial Resilience?",
-      "description": ""
+      "title": "Credit Risk and Bank Performance in Bangladesh: Can Green Banking Enhance Banks’ Financial Resilience?"
     }
   ],
   "published": [
@@ -156,35 +150,30 @@
       "rank": "Q1",
       "badge": "Scopus Q1",
       "title": "Perceived Algorithmic Personalization and Social Media Information Reliance in Organic Food Purchase Intention among Consumers in Bangladesh",
-      "authors": "",
       "journal": "Discover Artificial Intelligence"
     },
     {
       "rank": "Q1",
       "badge": "Scopus Q1 | WoS ESCI | First Author",
       "title": "Green Price Acceptance and AI Personalized Recommendations in Organic Food Purchase Intention among Urban Consumers in Bangladesh",
-      "authors": "",
       "journal": "Discover Sustainability"
     },
     {
       "rank": "Q1",
       "badge": "Scopus Q1 | WoS ESCI",
       "title": "Antecedents of Green Purchase Intention and the Moderating Role of Social Media Usage in an Extended TPB Framework",
-      "authors": "",
       "journal": "Discover Sustainability"
     },
     {
       "rank": "Q1",
       "badge": "Scopus Q1 | WoS SSCI",
       "title": "AI-Driven Online Banking Adoption in Bangladesh: The Roles of Attitude and Perceived Government Support",
-      "authors": "",
       "journal": "SAGE Open"
     },
     {
       "rank": "Q1",
       "badge": "Scopus Q1 | WoS SSCI | ABS 1",
       "title": "Green Purchase Intention in a Global South Megacity: The Roles of Sustainability Awareness and Willingness to Pay a Green Premium",
-      "authors": "",
       "journal": "Current Psychology"
     }
   ],
