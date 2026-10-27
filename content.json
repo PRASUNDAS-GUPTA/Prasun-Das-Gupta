@@ -103,6 +103,10 @@
   ],
   "ongoing": [
     {
+      "label": "Environmental Finance",
+      "title": "Climate Shocks, Credit Risk, and Bank Performance  in Bangladesh"
+    },
+    {
       "label": "FinTech & Banking",
       "title": "FinTech Adoption, Industry 4.0 Adoption, and Bank Performance: A Primary Approach in Bangladesh"
     },
@@ -113,10 +117,6 @@
     {
       "label": "Agricultural Technology",
       "title": "Technology Adoption among Farmers"
-    },
-    {
-      "label": "Green Banking",
-      "title": "Credit Risk and Bank Performance in Bangladesh: Can Green Banking Enhance Banks’ Financial Resilience?"
     }
   ],
   "published": [
